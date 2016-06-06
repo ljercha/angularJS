@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
-
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
 
 @Component({
   selector: 'my-dashboard',
   templateUrl: 'app/dashboard.component.html'
-})
+  
+  })
 
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
@@ -27,3 +27,4 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(link);
   }
 }
+
