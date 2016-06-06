@@ -7,7 +7,15 @@
     <input [(ngModel)]="location.name" placeholder="name" />
   </div>
   <div>
-  <sebm-google-map [latitude]="lat" [longitude]="lng">
+    <label>lat: </label>
+    <input [(ngModel)]="location.lat" placeholder="lat" />
+  </div>
+  <div>
+    <label>lng: </label>
+    <input [(ngModel)]="location.lng" placeholder="lng" />
+  </div>
+  <div>
+  <sebm-google-map [latitude]="location.lat" [longitude]="location.lng">
   </sebm-google-map>
   </div>
   <button (click)="goBack()">Back</button>

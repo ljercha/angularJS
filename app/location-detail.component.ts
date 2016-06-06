@@ -26,8 +26,7 @@ export class LocationDetailComponent implements OnInit {
 
   constructor(
     private locationService: LocationService,
-    private routeParams: RouteParams) {
-  }
+    private routeParams: RouteParams) {}
   
   ngOnInit() {
     let id = +this.routeParams.get('id');
@@ -37,4 +36,5 @@ export class LocationDetailComponent implements OnInit {
   goBack() {
     window.history.back();
   }
+
 }
