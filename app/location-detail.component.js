@@ -8,37 +8,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var hero_service_1 = require('./hero.service');
+var location_service_1 = require('./location.service');
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var core_2 = require('angular2-google-maps/core');
-var HeroDetailComponent = (function () {
-    function HeroDetailComponent(heroService, routeParams) {
-        this.heroService = heroService;
+var LocationDetailComponent = (function () {
+    function LocationDetailComponent(locationService, routeParams) {
+        this.locationService = locationService;
         this.routeParams = routeParams;
         this.lat = 51.678418;
         this.lng = 7.809007;
     }
-    HeroDetailComponent.prototype.ngOnInit = function () {
+    LocationDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         var id = +this.routeParams.get('id');
-        this.heroService.getHero(id)
-            .then(function (hero) { return _this.hero = hero; });
+        this.locationService.getLocation(id)
+            .then(function (location) { return _this.location = location; });
     };
-    HeroDetailComponent.prototype.goBack = function () {
+    LocationDetailComponent.prototype.goBack = function () {
         window.history.back();
     };
-    HeroDetailComponent = __decorate([
+    LocationDetailComponent = __decorate([
         core_1.Component({
-            selector: 'my-hero-detail',
-            templateUrl: 'app/hero-detail.component.html',
+            selector: 'my-location-detail',
+            templateUrl: 'app/location-detail.component.html',
             styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n      width: 300px;\n    }\n  "],
             directives: [core_2.ANGULAR2_GOOGLE_MAPS_DIRECTIVES] // this loads all angular2-google-maps directives in this component
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof hero_service_1.HeroService !== 'undefined' && hero_service_1.HeroService) === 'function' && _a) || Object, router_deprecated_1.RouteParams])
-    ], HeroDetailComponent);
-    return HeroDetailComponent;
-    var _a;
+        __metadata('design:paramtypes', [location_service_1.LocationService, router_deprecated_1.RouteParams])
+    ], LocationDetailComponent);
+    return LocationDetailComponent;
 }());
-exports.HeroDetailComponent = HeroDetailComponent;
-//# sourceMappingURL=hero-detail.component.js.map
+exports.LocationDetailComponent = LocationDetailComponent;
+//# sourceMappingURL=location-detail.component.js.map

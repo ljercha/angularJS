@@ -1,17 +1,17 @@
 import { Component }       from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
-import { HeroService }     from './hero.service';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
+import { LocationService }     from './location.service';
+import { LocationComponent } from './location.component';
+import { LocationDetailComponent } from './location-detail.component';
 
 import { DashboardComponent } from './dashboard.component';
 
 @RouteConfig([
   {
-    path: '/heroes',
-    name: 'Heroes',
-    component: HeroesComponent
+    path: '/location',
+    name: 'Location',
+    component: LocationComponent
   },
   {
     path: '/dashboard',
@@ -21,8 +21,8 @@ import { DashboardComponent } from './dashboard.component';
   },
   {
     path: '/detail/:id',
-    name: 'HeroDetail',
-    component: HeroDetailComponent
+    name: 'LocationDetail',
+    component: LocationDetailComponent
   },
 ])
 
@@ -32,17 +32,17 @@ import { DashboardComponent } from './dashboard.component';
   <h1>{{title}}</h1>
   <nav>
     <a [routerLink]="['Dashboard']">Dashboard</a>
-    <a [routerLink]="['Heroes']">Heroes</a>
+    <a [routerLink]="['Location']">Locations</a>
   </nav>
   <router-outlet></router-outlet>
   `,
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,
-    HeroService
+    LocationService
   ]
 
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Tour of Locations';
 }

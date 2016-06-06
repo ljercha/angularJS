@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var hero_service_1 = require('./hero.service');
-var heroes_component_1 = require('./heroes.component');
-var hero_detail_component_1 = require('./hero-detail.component');
+var location_service_1 = require('./location.service');
+var location_component_1 = require('./location.component');
+var location_detail_component_1 = require('./location-detail.component');
 var dashboard_component_1 = require('./dashboard.component');
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Tour of Heroes';
+        this.title = 'Tour of Locations';
     }
     AppComponent = __decorate([
         router_deprecated_1.RouteConfig([
             {
-                path: '/heroes',
-                name: 'Heroes',
-                component: heroes_component_1.HeroesComponent
+                path: '/location',
+                name: 'Location',
+                component: location_component_1.LocationComponent
             },
             {
                 path: '/dashboard',
@@ -33,17 +33,17 @@ var AppComponent = (function () {
             },
             {
                 path: '/detail/:id',
-                name: 'HeroDetail',
-                component: hero_detail_component_1.HeroDetailComponent
+                name: 'LocationDetail',
+                component: location_detail_component_1.LocationDetailComponent
             },
         ]),
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <h1>{{title}}</h1>\n  <nav>\n    <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n    <a [routerLink]=\"['Heroes']\">Heroes</a>\n  </nav>\n  <router-outlet></router-outlet>\n  ",
+            template: "\n  <h1>{{title}}</h1>\n  <nav>\n    <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n    <a [routerLink]=\"['Location']\">Locations</a>\n  </nav>\n  <router-outlet></router-outlet>\n  ",
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
-                hero_service_1.HeroService
+                location_service_1.LocationService
             ]
         }), 
         __metadata('design:paramtypes', [])

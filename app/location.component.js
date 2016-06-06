@@ -8,32 +8,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var location_service_1 = require('./location.service');
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var location_service_1 = require('./location.service');
-var DashboardComponent = (function () {
-    function DashboardComponent(router, locationService) {
+var LocationComponent = (function () {
+    function LocationComponent(router, locationService) {
         this.router = router;
         this.locationService = locationService;
-        this.locations = [];
     }
-    DashboardComponent.prototype.ngOnInit = function () {
+    LocationComponent.prototype.getLocations = function () {
         var _this = this;
-        this.locationService.getLocations()
-            .then(function (locations) { return _this.locations = locations.slice(1, 5); });
+        this.locationService.getLocations().then(function (locations) { return _this.locations = locations; });
     };
-    DashboardComponent.prototype.gotoDetail = function (location) {
-        var link = ['LocationDetail', { id: location.id }];
-        this.router.navigate(link);
+    LocationComponent.prototype.ngOnInit = function () {
+        this.getLocations();
     };
-    DashboardComponent = __decorate([
+    LocationComponent.prototype.onSelect = function (location) { this.selectedLocation = location; };
+    LocationComponent.prototype.gotoDetail = function () {
+        this.router.navigate(['LocationDetail', { id: this.selectedLocation.id }]);
+    };
+    LocationComponent = __decorate([
         core_1.Component({
-            selector: 'my-dashboard',
-            templateUrl: 'app/dashboard.component.html'
+            selector: 'my-location',
+            templateUrl: 'app/location.component.html',
+            styleUrls: ['app/location.component.css'],
+            providers: [location_service_1.LocationService]
         }), 
         __metadata('design:paramtypes', [router_deprecated_1.Router, location_service_1.LocationService])
-    ], DashboardComponent);
-    return DashboardComponent;
+    ], LocationComponent);
+    return LocationComponent;
 }());
-exports.DashboardComponent = DashboardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+exports.LocationComponent = LocationComponent;
+//# sourceMappingURL=location.component.js.map
