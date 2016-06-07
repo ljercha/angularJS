@@ -1,5 +1,5 @@
 import { Location } from './location';
-import { Weather } from './weather';
+import { Weather, WeatherDetail, WeatherMain } from './weather';
 
 import { LocationService } from './location.service';
 import { WeatherService } from './weather.service';
@@ -39,6 +39,7 @@ export class WeatherDetailComponent implements OnInit {
     this.weatherService.getCurrentWeather(name)
                      .subscribe(
                        weather => this.weather = weather,
+                       
                        error =>  this.errorMessage = <any>error);
   }
   

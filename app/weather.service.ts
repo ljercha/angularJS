@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Location } from './location';
-import { Weather } from './weather';
+import { Weather, WeatherDetail, WeatherMain } from './weather';
 import { Coordinates} from './coordinates';
 
 import { LOCATIONS } from './mock-locations';
@@ -59,7 +59,7 @@ export class WeatherService {
   
    private extractData(res: Response) {
     let body = res.json();
-    return body.weather;
+    return body;
   }
   
    private handleError (error: any) {

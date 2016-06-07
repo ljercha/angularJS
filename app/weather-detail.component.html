@@ -1,16 +1,18 @@
 <h2> Weather</h2>
 <div *ngIf="location">
-  <h2>{{location.name}} details!</h2>
-  <div>
-    <label>id: </label>{{location.id}}</div>
-
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="location.name" placeholder="name" />
+<div *ngIf="weather">
+  <h2>{{location.name}} - {{weather.main.temp_min}}</h2>
   </div>
   <div *ngIf="weather">
-  <h3>Aloha</h3>
+  <div>{{weather.weather[0].main}}</div>
+  <div>Description: {{weather.weather[0].description}}</div>
+  <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png"/>
+  <div>Humidity: {{weather.main.humidity}} %</div>
+  <div>Pressure: {{weather.main.pressure}}</div>
+  <div>Minimum temperature: {{weather.main.temp_min}}</div>
+  <div>Maximum temperature: {{weather.main.temp_max}}</div>
   </div>
+
   <table>
     <tr>
       <td><button (click)="currentWeather()">Current Weather</button></td>

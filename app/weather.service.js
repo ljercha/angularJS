@@ -49,7 +49,7 @@ var WeatherService = (function () {
     };
     WeatherService.prototype.extractData = function (res) {
         var body = res.json();
-        return body.weather;
+        return body;
     };
     WeatherService.prototype.handleError = function (error) {
         // In a real world app, we might use a remote logging infrastructure
