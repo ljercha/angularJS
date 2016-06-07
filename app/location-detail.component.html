@@ -5,16 +5,9 @@
 
   <div>
     <label>name: </label>
-    <input [(ngModel)]="location.name" placeholder="name" />
+    <input [(ngModel)]="location.name" (keyup.enter)="getCoordinates([location.name])" placeholder="name" />
   </div>
-  <div>
-    <label>lat: </label>
-    <input [(ngModel)]="location.lat" placeholder="lat" />
-  </div>
-  <div>
-    <label>lng: </label>
-    <input [(ngModel)]="location.lon" placeholder="lon" />
-  </div>
+
     <div class="module hero">
 
     </div>
