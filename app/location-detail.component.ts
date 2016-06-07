@@ -4,7 +4,7 @@ import { Lokacja } from './lokacja';
 import { LocationService } from './location.service';
 
 import { Component, Input, OnInit } from '@angular/core';
-import { RouteParams } from '@angular/router-deprecated';
+import { Router, RouteParams } from '@angular/router-deprecated';
 import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
 
 
@@ -26,6 +26,7 @@ export class LocationDetailComponent implements OnInit {
   errorMessage : String;
   constructor(
     private locationService: LocationService,
+    private router: Router,
     private routeParams: RouteParams) {}
   
   ngOnInit() {
@@ -37,6 +38,11 @@ export class LocationDetailComponent implements OnInit {
   }
   goBack() {
     window.history.back();
+  }
+  
+  gotoWeather() {
+    let link = ['WeatherDetail', { id: this.location.id }];
+    this.router.navigate(link);
   }
   
 getCoordinates(name: string) {

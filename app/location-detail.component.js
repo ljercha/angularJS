@@ -13,8 +13,9 @@ var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var core_2 = require('angular2-google-maps/core');
 var LocationDetailComponent = (function () {
-    function LocationDetailComponent(locationService, routeParams) {
+    function LocationDetailComponent(locationService, router, routeParams) {
         this.locationService = locationService;
+        this.router = router;
         this.routeParams = routeParams;
     }
     LocationDetailComponent.prototype.ngOnInit = function () {
@@ -25,6 +26,10 @@ var LocationDetailComponent = (function () {
     };
     LocationDetailComponent.prototype.goBack = function () {
         window.history.back();
+    };
+    LocationDetailComponent.prototype.gotoWeather = function () {
+        var link = ['WeatherDetail', { id: this.location.id }];
+        this.router.navigate(link);
     };
     LocationDetailComponent.prototype.getCoordinates = function (name) {
         var _this = this;
@@ -38,7 +43,7 @@ var LocationDetailComponent = (function () {
             styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n      width: 300px;\n    }\n  "],
             directives: [core_2.ANGULAR2_GOOGLE_MAPS_DIRECTIVES] // this loads all angular2-google-maps directives in this component
         }), 
-        __metadata('design:paramtypes', [location_service_1.LocationService, router_deprecated_1.RouteParams])
+        __metadata('design:paramtypes', [location_service_1.LocationService, router_deprecated_1.Router, router_deprecated_1.RouteParams])
     ], LocationDetailComponent);
     return LocationDetailComponent;
 }());

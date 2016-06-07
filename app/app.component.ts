@@ -2,8 +2,12 @@ import { Component }       from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 import { LocationService }     from './location.service';
+import { WeatherService }     from './weather.service';
+
 import { LocationComponent } from './location.component';
 import { LocationDetailComponent } from './location-detail.component';
+import { WeatherDetailComponent } from './weather-detail.component';
+
 import { SearchLocationComponent } from './search-location.component';
 
 import { DashboardComponent } from './dashboard.component';
@@ -26,9 +30,9 @@ import { DashboardComponent } from './dashboard.component';
     component: LocationDetailComponent
   },
   {
-    path: '/search-location/',
-    name: 'SearchLocation',
-    component: SearchLocationComponent
+    path: '/weather-detail/:id',
+    name: 'WeatherDetail',
+    component: WeatherDetailComponent
   },
 ])
 
@@ -39,15 +43,14 @@ import { DashboardComponent } from './dashboard.component';
   <nav>
     <a [routerLink]="['Dashboard']">Dashboard</a>
     <a [routerLink]="['Location']">Locations</a>
-    <a [routerLink]="['SearchLocation']">Search</a>
-
   </nav>
   <router-outlet></router-outlet>
   `,
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,
-    LocationService
+    LocationService,
+    WeatherService
   ]
 
 })
