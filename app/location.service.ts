@@ -39,9 +39,9 @@ export class LocationService {
   }
   
    //private heroesUrl = 'http://api.openweathermap.org/data/2.5/weather?q=Kayoken&APPID=2cdf64d521f39997bd4a656104cf4d31';  // URL to web API
-private heroesUrl = 'app/heroes.json';
-  getHeroes (): Observable<Lokacja[]> {
-    return this.http.get(this.heroesUrl)
+private locationURL = 'app/locations.json';
+  getCoordinates (): Observable<Lokacja> {
+    return this.http.get(this.locationURL)
                     .map(this.extractData)
                     .catch(this.handleError);
   }

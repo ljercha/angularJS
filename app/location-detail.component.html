@@ -14,13 +14,11 @@
     <label>lng: </label>
     <input [(ngModel)]="location.lng" placeholder="lng" />
   </div>
-    <div *ngFor="let loc of lokacja" (click)="gotoDetail(location)" class="col-1-4">
     <div class="module hero">
-      <h4>{{loc.lat}}</h4>
-      <h3>{{loc.lon}}</h3>
+      {{lokacja.lat}}
+      {{lokacja.lon}}
 
     </div>
-  </div>
 
   <div>
   <sebm-google-map [latitude]="location.lat" [longitude]="location.lng">

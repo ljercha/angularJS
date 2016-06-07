@@ -22,14 +22,14 @@ var LocationDetailComponent = (function () {
         var id = +this.routeParams.get('id');
         this.locationService.getLocation(id)
             .then(function (location) { return _this.location = location; });
-        this.getHeroes();
+        this.getCoordinates();
     };
     LocationDetailComponent.prototype.goBack = function () {
         window.history.back();
     };
-    LocationDetailComponent.prototype.getHeroes = function () {
+    LocationDetailComponent.prototype.getCoordinates = function () {
         var _this = this;
-        this.locationService.getHeroes()
+        this.locationService.getCoordinates()
             .subscribe(function (lokacja) { return _this.lokacja = lokacja; }, function (error) { return _this.errorMessage = error; });
     };
     LocationDetailComponent = __decorate([

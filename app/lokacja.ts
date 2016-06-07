@@ -1,5 +1,5 @@
 export class Lokacja {
- lon: number;
- lat: number;
+ public lon: number;
+ public lat: number;
   }
   
