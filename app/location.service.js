@@ -23,8 +23,6 @@ require('rxjs/add/operator/toPromise');
 var LocationService = (function () {
     function LocationService(http) {
         this.http = http;
-        //private heroesUrl = 'http://api.openweathermap.org/data/2.5/weather?q=Kayoken&APPID=2cdf64d521f39997bd4a656104cf4d31';  // URL to web API
-        this.locationURL = 'app/locations.json';
     }
     LocationService.prototype.getLocations = function () {
         return Promise.resolve(mock_locations_1.LOCATIONS);
@@ -40,8 +38,12 @@ var LocationService = (function () {
         return this.getLocations()
             .then(function (locations) { return locations.filter(function (location) { return location.id === id; })[0]; });
     };
-    LocationService.prototype.getCoordinates = function () {
-        return this.http.get(this.locationURL)
+    //  private locationURL = 'http://api.openweathermap.org/data/2.5/weather?q= +  + 'APPID=2cdf64d521f39997bd4a656104cf4d31';  // URL to web API
+    //private locationURL : string;
+    //private locationURL = 'app/locations.json';
+    LocationService.prototype.getCoordinates = function (name) {
+        var locationURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + name + '&APPID=2cdf64d521f39997bd4a656104cf4d31'; // URL to web API
+        return this.http.get(locationURL)
             .map(this.extractData)
             .catch(this.handleError);
     };

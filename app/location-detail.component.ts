@@ -22,7 +22,7 @@ import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
 export class LocationDetailComponent implements OnInit {
 
   location: Location;
-  lokacja: Lokacja;
+  lokacja: Location;
   errorMessage : String;
   constructor(
     private locationService: LocationService,
@@ -31,19 +31,18 @@ export class LocationDetailComponent implements OnInit {
   ngOnInit() {
     let id = +this.routeParams.get('id');
     this.locationService.getLocation(id)
-      .then(location => this.location = location);
+      .then(location => this.location = location).then(() => this.getCoordinates(this.location.name));
+
       
-      this.getCoordinates();
   }
   goBack() {
     window.history.back();
   }
   
-getCoordinates() {
-
-    this.locationService.getCoordinates()
+getCoordinates(name: string) {
+    this.locationService.getCoordinates(name)
                      .subscribe(
-                       lokacja => this.lokacja = lokacja,
+                       coord => this.location.coord = coord,
                        error =>  this.errorMessage = <any>error);
   }
   

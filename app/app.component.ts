@@ -4,6 +4,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 import { LocationService }     from './location.service';
 import { LocationComponent } from './location.component';
 import { LocationDetailComponent } from './location-detail.component';
+import { SearchLocationComponent } from './search-location.component';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -24,6 +25,11 @@ import { DashboardComponent } from './dashboard.component';
     name: 'LocationDetail',
     component: LocationDetailComponent
   },
+  {
+    path: '/search-location/',
+    name: 'SearchLocation',
+    component: SearchLocationComponent
+  },
 ])
 
 @Component({
@@ -33,6 +39,8 @@ import { DashboardComponent } from './dashboard.component';
   <nav>
     <a [routerLink]="['Dashboard']">Dashboard</a>
     <a [routerLink]="['Location']">Locations</a>
+    <a [routerLink]="['SearchLocation']">Search</a>
+
   </nav>
   <router-outlet></router-outlet>
   `,

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Location } from './location';
 import { Lokacja } from './lokacja';
+import { Coordinates} from './coordinates';
 
 import { LOCATIONS } from './mock-locations';
 import { Http, Response } from '@angular/http';
@@ -38,10 +39,14 @@ export class LocationService {
              .then(locations => locations.filter(location => location.id === id)[0]);
   }
   
-   //private heroesUrl = 'http://api.openweathermap.org/data/2.5/weather?q=Kayoken&APPID=2cdf64d521f39997bd4a656104cf4d31';  // URL to web API
-private locationURL = 'app/locations.json';
-  getCoordinates (): Observable<Lokacja> {
-    return this.http.get(this.locationURL)
+   //  private locationURL = 'http://api.openweathermap.org/data/2.5/weather?q= +  + 'APPID=2cdf64d521f39997bd4a656104cf4d31';  // URL to web API
+
+  //private locationURL : string;
+//private locationURL = 'app/locations.json';
+  getCoordinates (name : string ): Observable<Coordinates> {
+    var locationURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + name + '&APPID=2cdf64d521f39997bd4a656104cf4d31';  // URL to web API
+
+    return this.http.get(locationURL)
                     .map(this.extractData)
                     .catch(this.handleError);
   }

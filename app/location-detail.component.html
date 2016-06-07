@@ -2,6 +2,9 @@
   <h2>{{location.name}} details!</h2>
   <div>
     <label>id: </label>{{location.id}}</div>
+    <div *ngIf="lokacja">object data using NgIf: {{lokacja.coord.lat}}</div>
+    <div *ngIf="lokacja">object data using NgIf: {{lokacja.coord.lon}}</div>
+
   <div>
     <label>name: </label>
     <input [(ngModel)]="location.name" placeholder="name" />
@@ -12,16 +15,14 @@
   </div>
   <div>
     <label>lng: </label>
-    <input [(ngModel)]="location.lng" placeholder="lng" />
+    <input [(ngModel)]="location.lon" placeholder="lon" />
   </div>
     <div class="module hero">
-      {{lokacja.lat}}
-      {{lokacja.lon}}
 
     </div>
 
-  <div>
-  <sebm-google-map [latitude]="location.lat" [longitude]="location.lng">
+  <div *ngIf="location">
+  <sebm-google-map [latitude]="location.coord.lat" [longitude]="location.coord.lon">
   </sebm-google-map>
   </div>
   <button (click)="goBack()">Back</button>

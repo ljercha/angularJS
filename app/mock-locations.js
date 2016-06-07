@@ -1,14 +1,14 @@
 "use strict";
 exports.LOCATIONS = [
-    { id: 11, name: 'Gdynia', lat: 29, lng: 20 },
-    { id: 12, name: 'Warszawa', lat: 23, lng: 7 },
-    { id: 13, name: 'New York', lat: 36, lng: 10 },
-    { id: 14, name: 'Sidney', lat: 45, lng: 12 },
-    { id: 15, name: 'Pekin', lat: 45, lng: 25 },
-    { id: 16, name: 'London', lat: 55, lng: 30 },
-    { id: 17, name: 'Berlin', lat: 11, lng: 27 },
-    { id: 18, name: 'Liverpool', lat: 30, lng: 35 },
-    { id: 19, name: 'Madrid', lat: 63, lng: 5 },
-    { id: 20, name: 'Chicago', lat: 25, lng: 15 }
+    { id: 11, name: 'Gdynia', coord: { lat: 29, lon: 20 } },
+    { id: 12, name: 'Warszawa', coord: { lat: 23, lon: 7 } },
+    { id: 13, name: 'New York', coord: { lat: 36, lon: 10 } },
+    { id: 14, name: 'Sidney', coord: { lat: 45, lon: 12 } },
+    { id: 15, name: 'Pekin', coord: { lat: 45, lon: 25 } },
+    { id: 16, name: 'London', coord: { lat: 55, lon: 30 } },
+    { id: 17, name: 'Berlin', coord: { lat: 11, lon: 27 } },
+    { id: 18, name: 'Liverpool', coord: { lat: 30, lon: 35 } },
+    { id: 19, name: 'Madrid', coord: { lat: 63, lon: 5 } },
+    { id: 20, name: 'Chicago', coord: { lat: 25, lon: 15 } }
 ];
 //# sourceMappingURL=mock-locations.js.map

@@ -21,16 +21,15 @@ var LocationDetailComponent = (function () {
         var _this = this;
         var id = +this.routeParams.get('id');
         this.locationService.getLocation(id)
-            .then(function (location) { return _this.location = location; });
-        this.getCoordinates();
+            .then(function (location) { return _this.location = location; }).then(function () { return _this.getCoordinates(_this.location.name); });
     };
     LocationDetailComponent.prototype.goBack = function () {
         window.history.back();
     };
-    LocationDetailComponent.prototype.getCoordinates = function () {
+    LocationDetailComponent.prototype.getCoordinates = function (name) {
         var _this = this;
-        this.locationService.getCoordinates()
-            .subscribe(function (lokacja) { return _this.lokacja = lokacja; }, function (error) { return _this.errorMessage = error; });
+        this.locationService.getCoordinates(name)
+            .subscribe(function (coord) { return _this.location.coord = coord; }, function (error) { return _this.errorMessage = error; });
     };
     LocationDetailComponent = __decorate([
         core_1.Component({
