@@ -10,8 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var mock_locations_1 = require('./mock-locations');
+var http_1 = require('@angular/http');
+var Observable_1 = require('rxjs/Observable');
+require('rxjs/add/observable/throw');
+// Operators
+require('rxjs/add/operator/catch');
+require('rxjs/add/operator/debounceTime');
+require('rxjs/add/operator/distinctUntilChanged');
+require('rxjs/add/operator/map');
+require('rxjs/add/operator/switchMap');
+require('rxjs/add/operator/toPromise');
 var LocationService = (function () {
-    function LocationService() {
+    function LocationService(http) {
+        this.http = http;
+        //private heroesUrl = 'http://api.openweathermap.org/data/2.5/weather?q=Kayoken&APPID=2cdf64d521f39997bd4a656104cf4d31';  // URL to web API
+        this.heroesUrl = 'app/heroes.json';
     }
     LocationService.prototype.getLocations = function () {
         return Promise.resolve(mock_locations_1.LOCATIONS);
@@ -27,9 +40,26 @@ var LocationService = (function () {
         return this.getLocations()
             .then(function (locations) { return locations.filter(function (location) { return location.id === id; })[0]; });
     };
+    LocationService.prototype.getHeroes = function () {
+        return this.http.get(this.heroesUrl)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    LocationService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body.coord;
+    };
+    LocationService.prototype.handleError = function (error) {
+        // In a real world app, we might use a remote logging infrastructure
+        // We'd also dig deeper into the error to get a better message
+        var errMsg = (error.message) ? error.message :
+            error.status ? error.status + " - " + error.statusText : 'Server error';
+        console.error(errMsg); // log to console instead
+        return Observable_1.Observable.throw(errMsg);
+    };
     LocationService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], LocationService);
     return LocationService;
 }());

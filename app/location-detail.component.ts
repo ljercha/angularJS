@@ -1,4 +1,6 @@
 import { Location } from './location';
+import { Lokacja } from './lokacja';
+
 import { LocationService } from './location.service';
 
 import { Component, Input, OnInit } from '@angular/core';
@@ -21,9 +23,8 @@ import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
 export class LocationDetailComponent implements OnInit {
 
   location: Location;
-  lat: number = 51.678418;
-  lng: number = 7.809007;
-
+  lokacja: Lokacja[];
+  errorMessage : String;
   constructor(
     private locationService: LocationService,
     private routeParams: RouteParams) {}
@@ -32,9 +33,18 @@ export class LocationDetailComponent implements OnInit {
     let id = +this.routeParams.get('id');
     this.locationService.getLocation(id)
       .then(location => this.location = location);
+      this.getHeroes();
   }
   goBack() {
     window.history.back();
   }
+  
+getHeroes() {
+    this.locationService.getHeroes()
+                     .subscribe(
+                       lokacja => this.lokacja = lokacja,
+                       error =>  this.errorMessage = <any>error);
+  }
+  
 
 }

@@ -16,17 +16,21 @@ var LocationDetailComponent = (function () {
     function LocationDetailComponent(locationService, routeParams) {
         this.locationService = locationService;
         this.routeParams = routeParams;
-        this.lat = 51.678418;
-        this.lng = 7.809007;
     }
     LocationDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         var id = +this.routeParams.get('id');
         this.locationService.getLocation(id)
             .then(function (location) { return _this.location = location; });
+        this.getHeroes();
     };
     LocationDetailComponent.prototype.goBack = function () {
         window.history.back();
+    };
+    LocationDetailComponent.prototype.getHeroes = function () {
+        var _this = this;
+        this.locationService.getHeroes()
+            .subscribe(function (lokacja) { return _this.lokacja = lokacja; }, function (error) { return _this.errorMessage = error; });
     };
     LocationDetailComponent = __decorate([
         core_1.Component({
