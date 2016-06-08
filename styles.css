@@ -46,13 +46,14 @@ nav a {
   display: inline-block;
   background-color: #336600;
   border-radius: 4px;
+  color:gray;
 }
 nav a:visited, a:link {
   color: #607D8B;
 }
 nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
+  color: black;
+  background-color: #33FF00;
 }
 nav a.router-link-active {
   color: #039be5;
