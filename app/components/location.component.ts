@@ -7,8 +7,8 @@ import { Router } from '@angular/router-deprecated';
 
 @Component({
   selector: 'my-location',
-  templateUrl: 'app/location.component.html',
-  styleUrls:  ['app/location.component.css'],
+  templateUrl: 'app/components/location.component.html',
+  styleUrls:  ['app/components/location.component.css'],
   providers: [LocationService]
 
 })

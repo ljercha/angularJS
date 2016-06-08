@@ -9,7 +9,7 @@ import { Router,RouteParams } from '@angular/router-deprecated';
 
 @Component({
   selector: 'weather-detail',
-  templateUrl: 'app/weather-detail.component.html',
+  templateUrl: 'app/components/weather-detail.component.html',
    styles: [`
     .sebm-google-map-container {
       height: 300px;

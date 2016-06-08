@@ -8,7 +8,7 @@ import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
 
 @Component({
   selector: 'my-location-detail',
-  templateUrl: 'app/location-detail.component.html',
+  templateUrl: 'app/components/location-detail.component.html',
    styles: [`
     .sebm-google-map-container {
       height: 300px;

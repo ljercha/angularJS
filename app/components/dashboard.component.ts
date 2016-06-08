@@ -5,7 +5,7 @@ import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: 'app/dashboard.component.html'
+  templateUrl: 'app/components/dashboard.component.html'
   
   })
 
