@@ -37,7 +37,7 @@ var WeatherDetailComponent = (function () {
         core_1.Component({
             selector: 'weather-detail',
             templateUrl: 'app/weather-detail.component.html',
-            styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n      width: 300px;\n    }\n  "],
+            styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n      width: 300px;\n      padding: 20px;\n    }\n  "],
         }), 
         __metadata('design:paramtypes', [location_service_1.LocationService, weather_service_1.WeatherService, router_deprecated_1.Router, router_deprecated_1.RouteParams])
     ], WeatherDetailComponent);

@@ -15,6 +15,7 @@ import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
     .sebm-google-map-container {
       height: 300px;
       width: 300px;
+      padding: 20px;
     }
   `],
     directives: [ANGULAR2_GOOGLE_MAPS_DIRECTIVES]// this loads all angular2-google-maps directives in this component

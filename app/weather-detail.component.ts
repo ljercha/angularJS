@@ -14,6 +14,7 @@ import { Router,RouteParams } from '@angular/router-deprecated';
     .sebm-google-map-container {
       height: 300px;
       width: 300px;
+      padding: 20px;
     }
   `],
 

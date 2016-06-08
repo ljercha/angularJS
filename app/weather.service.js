@@ -29,24 +29,6 @@ var WeatherService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
-    WeatherService.prototype.getCoordinates = function (name) {
-        var locationURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + name + '&APPID=2cdf64d521f39997bd4a656104cf4d31'; // URL to web API
-        return this.http.get(locationURL)
-            .map(this.extractData)
-            .catch(this.handleError);
-    };
-    WeatherService.prototype.fiveDayWeather = function (name) {
-        var locationURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + name + '&APPID=2cdf64d521f39997bd4a656104cf4d31'; // URL to web API
-        return this.http.get(locationURL)
-            .map(this.extractData)
-            .catch(this.handleError);
-    };
-    WeatherService.prototype.sixteenDayWeather = function (name) {
-        var locationURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + name + '&APPID=2cdf64d521f39997bd4a656104cf4d31'; // URL to web API
-        return this.http.get(locationURL)
-            .map(this.extractData)
-            .catch(this.handleError);
-    };
     WeatherService.prototype.extractData = function (res) {
         var body = res.json();
         return body;
