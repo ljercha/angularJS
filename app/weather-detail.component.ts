@@ -44,6 +44,10 @@ export class WeatherDetailComponent implements OnInit {
                        error =>  this.errorMessage = <any>error);
   }
   
+  toCelsius(kelvin: number) {
+    return Math.round(kelvin - 272);
+  }
+  
   goBack() {
     window.history.back();
   }  

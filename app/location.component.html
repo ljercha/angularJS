@@ -1,13 +1,13 @@
 <h1>{{title}}</h1>
     <h2>My Location</h2>
-    <ul class="heroes">
+    <ul class="heroes" style="float:left">
       <li *ngFor="let location of locations"
         [class.selected]="location === selectedLocation"
         (click)="onSelect(location)">
         <span class="badge">{{location.country}}</span> {{location.name}}
       </li>
     </ul>
-    <div *ngIf="selectedLocation">
+    <div *ngIf="selectedLocation" style="float:left;padding: 20px;">
       <h2>
         {{selectedLocation.name | uppercase}}
       </h2>

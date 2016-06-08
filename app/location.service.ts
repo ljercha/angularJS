@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Location } from './location';
-import { Lokacja } from './lokacja';
 import { Coordinates} from './coordinates';
 
 import { LOCATIONS } from './mock-locations';

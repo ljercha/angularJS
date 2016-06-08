@@ -3,20 +3,22 @@
   <div>
     <label>Country: </label>{{location.country}}</div>
 
-  <div>
+  <div style="float:left">
     <label>Name: </label>
-    <input [(ngModel)]="location.name" (keyup.enter)="getCoordinates([location.name]);getCountry([location.name])" placeholder="name" />
+    <input [(ngModel)]="location.name" (keyup.enter)="getCoordinates([location.name]);getCountry([location.name])" placeholder="name"/>
+    <br/>
+    <button (click)="goBack()">Back</button>
+    <button (click)="gotoWeather()">Weather Details</button>
   </div>
 
     <div class="module hero">
 
     </div>
 
-  <div *ngIf="location">
+  <div *ngIf="location" style="float:left">
   <sebm-google-map [latitude]="location.coord.lat" [longitude]="location.coord.lon">
   </sebm-google-map>
   </div>
-  <button (click)="goBack()">Back</button>
-  <button (click)="gotoWeather()">Weather Details</button>
+  <div style="clear: both;"></div>
 
 </div>

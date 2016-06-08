@@ -30,6 +30,9 @@ var WeatherDetailComponent = (function () {
         this.weatherService.getCurrentWeather(name)
             .subscribe(function (weather) { return _this.weather = weather; }, function (error) { return _this.errorMessage = error; });
     };
+    WeatherDetailComponent.prototype.toCelsius = function (kelvin) {
+        return Math.round(kelvin - 272);
+    };
     WeatherDetailComponent.prototype.goBack = function () {
         window.history.back();
     };

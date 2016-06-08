@@ -47,7 +47,7 @@ var LocationDetailComponent = (function () {
         core_1.Component({
             selector: 'my-location-detail',
             templateUrl: 'app/location-detail.component.html',
-            styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n      width: 300px;\n      padding: 20px;\n    }\n  "],
+            styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n      width: 300px;\n      margin-left: 20px;\n      display:block;\n    }\n  "],
             directives: [core_2.ANGULAR2_GOOGLE_MAPS_DIRECTIVES] // this loads all angular2-google-maps directives in this component
         }), 
         __metadata('design:paramtypes', [location_service_1.LocationService, router_deprecated_1.Router, router_deprecated_1.RouteParams])

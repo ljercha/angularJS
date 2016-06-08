@@ -1,6 +1,4 @@
 import { Location } from './location';
-import { Lokacja } from './lokacja';
-
 import { LocationService } from './location.service';
 
 import { Component, Input, OnInit } from '@angular/core';
@@ -15,7 +13,8 @@ import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
     .sebm-google-map-container {
       height: 300px;
       width: 300px;
-      padding: 20px;
+      margin-left: 20px;
+      display:block;
     }
   `],
     directives: [ANGULAR2_GOOGLE_MAPS_DIRECTIVES]// this loads all angular2-google-maps directives in this component

@@ -8,8 +8,6 @@ import { LocationComponent } from './location.component';
 import { LocationDetailComponent } from './location-detail.component';
 import { WeatherDetailComponent } from './weather-detail.component';
 
-import { SearchLocationComponent } from './search-location.component';
-
 import { DashboardComponent } from './dashboard.component';
 
 @RouteConfig([
