@@ -22,7 +22,9 @@ var LocationDetailComponent = (function () {
         var _this = this;
         var id = +this.routeParams.get('id');
         this.locationService.getLocation(id)
-            .then(function (location) { return _this.location = location; }).then(function () { return _this.getCoordinates(_this.location.name); });
+            .then(function (location) { return _this.location = location; })
+            .then(function () { return _this.getCoordinates(_this.location.name); })
+            .then(function () { return _this.getCountry(_this.location.name); });
     };
     LocationDetailComponent.prototype.goBack = function () {
         window.history.back();
@@ -35,6 +37,11 @@ var LocationDetailComponent = (function () {
         var _this = this;
         this.locationService.getCoordinates(name)
             .subscribe(function (coord) { return _this.location.coord = coord; }, function (error) { return _this.errorMessage = error; });
+    };
+    LocationDetailComponent.prototype.getCountry = function (name) {
+        var _this = this;
+        this.locationService.getCountry(name)
+            .subscribe(function (country) { return _this.location.country = country; }, function (error) { return _this.errorMessage = error; });
     };
     LocationDetailComponent = __decorate([
         core_1.Component({

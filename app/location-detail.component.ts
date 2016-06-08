@@ -33,7 +33,9 @@ export class LocationDetailComponent implements OnInit {
   ngOnInit() {
     let id = +this.routeParams.get('id');
     this.locationService.getLocation(id)
-      .then(location => this.location = location).then(() => this.getCoordinates(this.location.name));
+      .then(location => this.location = location)
+      .then(() => this.getCoordinates(this.location.name))
+      .then(() => this.getCountry(this.location.name));
 
       
   }
@@ -46,12 +48,19 @@ export class LocationDetailComponent implements OnInit {
     this.router.navigate(link);
   }
   
-getCoordinates(name: string) {
+  getCoordinates(name: string) {
     this.locationService.getCoordinates(name)
                      .subscribe(
                        coord => this.location.coord = coord,
                        error =>  this.errorMessage = <any>error);
   }
+  
+  getCountry(name: string) {
+    this.locationService.getCountry(name)
+    .subscribe(
+    country => this.location.country = country,
+    error => this.errorMessage = <any>error);
+    }
   
 
 }

@@ -4,12 +4,12 @@
       <li *ngFor="let location of locations"
         [class.selected]="location === selectedLocation"
         (click)="onSelect(location)">
-        <span class="badge">{{location.id}}</span> {{location.name}}
+        <span class="badge">{{location.country}}</span> {{location.name}}
       </li>
     </ul>
     <div *ngIf="selectedLocation">
       <h2>
-        {{selectedLocation.name | uppercase}} is my hero
+        {{selectedLocation.name | uppercase}}
       </h2>
       <button (click)="gotoDetail()">View Details</button>
     </div>

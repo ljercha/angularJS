@@ -51,6 +51,16 @@ var LocationService = (function () {
         var body = res.json();
         return body.coord;
     };
+    LocationService.prototype.extractCountry = function (res) {
+        var body = res.json();
+        return body.sys.country;
+    };
+    LocationService.prototype.getCountry = function (name) {
+        var locationURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + name + '&APPID=2cdf64d521f39997bd4a656104cf4d31'; // URL to web API
+        return this.http.get(locationURL)
+            .map(this.extractCountry)
+            .catch(this.handleError);
+    };
     LocationService.prototype.handleError = function (error) {
         // In a real world app, we might use a remote logging infrastructure
         // We'd also dig deeper into the error to get a better message

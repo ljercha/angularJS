@@ -1,11 +1,11 @@
 <div *ngIf="location">
   <h2>{{location.name}} details!</h2>
   <div>
-    <label>id: </label>{{location.id}}</div>
+    <label>Country: </label>{{location.country}}</div>
 
   <div>
     <label>Name: </label>
-    <input [(ngModel)]="location.name" (keyup.enter)="getCoordinates([location.name])" placeholder="name" />
+    <input [(ngModel)]="location.name" (keyup.enter)="getCoordinates([location.name]);getCountry([location.name])" placeholder="name" />
   </div>
 
     <div class="module hero">
