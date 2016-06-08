@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
-import { Location } from './location';
-import { LocationService } from './location.service';
+import { Location } from '../models/location';
+import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'my-dashboard',

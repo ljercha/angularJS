@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Location } from './location';
-import { Weather, WeatherDetail, WeatherMain } from './weather';
-import { Coordinates} from './coordinates';
+import { Location } from '../models/location';
+import { Weather, WeatherDetail, WeatherMain } from '../models/weather';
+import { Coordinates} from '../models/coordinates';
 
 import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';

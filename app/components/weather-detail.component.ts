@@ -1,8 +1,8 @@
-import { Location } from './location';
-import { Weather, WeatherDetail, WeatherMain } from './weather';
+import { Location } from '../models/location';
+import { Weather, WeatherDetail, WeatherMain } from '../models/weather';
 
-import { LocationService } from './location.service';
-import { WeatherService } from './weather.service';
+import { LocationService } from '../services/location.service';
+import { WeatherService } from '../services/weather.service';
 
 import { Component, Input, OnInit } from '@angular/core';
 import { Router,RouteParams } from '@angular/router-deprecated';

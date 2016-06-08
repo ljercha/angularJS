@@ -1,4 +1,4 @@
-import { Coordinates} from './coordinates';
+import { Coordinates} from './models/coordinates';
 
 export class Location {
   id: number;

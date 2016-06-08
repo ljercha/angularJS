@@ -1,5 +1,5 @@
-import { Location } from './location';
-import { LocationService } from './location.service';
+import { Location } from '../models/location';
+import { LocationService } from '../services/location.service';
 
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouteParams } from '@angular/router-deprecated';

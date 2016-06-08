@@ -1,14 +1,14 @@
 import { Component }       from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
-import { LocationService }     from './location.service';
-import { WeatherService }     from './weather.service';
+import { LocationService }     from './services/location.service';
+import { WeatherService }     from './services/weather.service';
 
-import { LocationComponent } from './location.component';
-import { LocationDetailComponent } from './location-detail.component';
-import { WeatherDetailComponent } from './weather-detail.component';
+import { LocationComponent } from './components/location.component';
+import { LocationDetailComponent } from './components/location-detail.component';
+import { WeatherDetailComponent } from './components/weather-detail.component';
 
-import { DashboardComponent } from './dashboard.component';
+import { DashboardComponent } from './components/dashboard.component';
 
 @RouteConfig([
   {

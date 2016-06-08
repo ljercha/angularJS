@@ -1,5 +1,5 @@
-import { Location} from './location';
-import { Coordinates} from './coordinates';
+import { Location} from './models/location';
+import { Coordinates} from './models/coordinates';
 
 export var LOCATIONS: Location[] = [
   {id: 11, name: 'Gdynia', country: 'PL', coord: {lat: 29, lon: 20}},
